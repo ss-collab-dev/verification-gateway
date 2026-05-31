@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.env
+
+# Receipts (production data)
+receipt-*.json
+receipts.db
+
+# Keys (keep private!)
+keys/private_key.pem
+keys/*.private
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Testing
+test_receipts/
+coverage/
