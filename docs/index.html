@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Gateway - Trust, But Verify</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .tagline { font-size: 1.5rem; opacity: 0.9; }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .feature h3 { color: var(--primary); margin-bottom: 1rem; }
+        
+        .code-block {
+            background: var(--dark);
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+        
+        .cta {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: white;
+            margin: 3rem 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0.5rem;
+        }
+        
+        .btn:hover { background: #1e40af; }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🔐 Verification Gateway</h1>
+        <p class="tagline">Trust, But Verify — Cryptographic Proof for AI Agent Actions</p>
+    </header>
+    
+    <div class="container">
+        <section class="features">
+            <div class="feature">
+                <h3>📝 Intent Compiler</h3>
+                <p>Natural language parsing that converts agent intentions into verifiable actions. "Check market status" becomes a signed, auditable receipt.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🔏 Cryptographic Receipts</h3>
+                <p>Every action generates an Ed25519-signed receipt. Replayable, falsifiable proof of what actually happened.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>💾 Persistent Database</h3>
+                <p>SQLite-backed storage with instant verification API. Query receipts by status, timestamp, or verification ID.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🛠️ Developer CLI</h3>
+                <p>Built-in command-line tool for generating receipts, verifying actions, and integrating with your agent stack.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>⚡ Zero Dependencies</h3>
+                <p>Pure Python implementation. No external services, no cloud dependencies. Runs entirely on your infrastructure.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🔍 Audit Trail</h3>
+                <p>Complete history of agent actions with cryptographic guarantees. Perfect for compliance and debugging.</p>
+            </div>
+        </section>
+        
+        <div class="code-block">
+<strong># Install & Setup</strong>
+git clone https://github.com/ss-collab-dev/verification-gateway.git
+cd verification-gateway
+
+# Generate keys
+python3 receipt_generator.py --init
+
+# Create your first receipt
+python3 vg-cli create "Check NIFTY market status"
+
+# Verify any action
+python3 vg-cli verify &lt;receipt-id&gt;
+        </div>
+        
+        <div class="cta">
+            <h2>Ready to Add Trust to Your Agents?</h2>
+            <p style="margin: 1.5rem 0;">Join the beta and get early access to verification tools + priority support.</p>
+            <a href="https://github.com/ss-collab-dev/verification-gateway" class="btn">View on GitHub</a>
+            <a href="https://github.com/ss-collab-dev/verification-gateway/blob/main/INSTALL.md" class="btn btn-secondary">Installation Guide</a>
+        </div>
+        
+        <section style="margin: 3rem 0;">
+            <h2 style="margin-bottom: 1.5rem;">Why Verification Matters</h2>
+            <p style="margin-bottom: 1rem;">AI agents are making real-world decisions: trading stocks, managing calendars, sending messages. But how do you know what they actually did?</p>
+            <p><strong>Verification Gateway</strong> provides cryptographic proof of every action, creating an immutable audit trail that holds agents accountable.</p>
+        </section>
+    </div>
+    
+    <footer>
+        <p>Built for the AI Agent Economy | v1.1.0 | MIT License</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="https://github.com/ss-collab-dev/verification-gateway" style="color: var(--primary);">GitHub</a> •
+            <a href="https://github.com/ss-collab-dev/verification-gateway/blob/main/SPEC.md" style="color: var(--primary);">Spec</a> •
+            <a href="https://github.com/ss-collab-dev/verification-gateway/blob/main/QUICKSTART.md" style="color: var(--primary);">Quickstart</a>
+        </p>
+    </footer>
+</body>
+</html>
